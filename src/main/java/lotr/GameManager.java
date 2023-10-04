@@ -5,6 +5,7 @@ public class GameManager {
         System.out.println("|----- Battle begins! -----|");
         System.out.println(c1.getClass().getSimpleName() + " against " + c2.getClass().getSimpleName());
         
+        // Special case for two Hobbits
         if (c1 instanceof Hobbit && c2 instanceof Hobbit){
             System.out.println("|----- The battle was over before it had even begun :'( -----|");
             return;
@@ -27,9 +28,9 @@ public class GameManager {
 
         System.out.println("|----- Battle ends! -----|");
         if (c1.isAlive()) {
-            System.out.println(c1.getClass().getSimpleName() + " wins!");
+            System.out.println(c1.getClass().getSimpleName() + " is the winner!");
         } else if (c2.isAlive()) {
-            System.out.println(c2.getClass().getSimpleName() + " wins!");
+            System.out.println(c2.getClass().getSimpleName() + " is the winner!");
         }
     }
     
@@ -42,7 +43,6 @@ public class GameManager {
     public static void main(String[] args) {
         Character c1 = CharacterFactory.createCharacter();
         Character c2 = CharacterFactory.createCharacter();
-
         fight(c1, c2);
     }
 }
